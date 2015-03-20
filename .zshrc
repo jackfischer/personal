@@ -18,3 +18,13 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # grab a page and all the required resources
 alias wgetmirror="wget -E -H -k -K -p "
+
+
+alias vim="MVimBinarySym"
+alias oldvim="/usr/bin/vim"
+alias gs="git status"
+alias gp="git pull"
+alias gc="git commit"
+alias ga="git add --all"
+
+

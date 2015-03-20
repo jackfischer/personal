@@ -1,7 +1,7 @@
 "Jack
 
 "Key controls
-nmap s :w <enter>
+"nmap s :w <enter>
 nmap q :q <enter> 
 imap <Tab> <C-P>
 map j gj
@@ -21,9 +21,9 @@ set notimeout "waiting for keys
 set ttimeout "waiting for keys
 set timeoutlen=50 "wait time for combos
 set smartindent "smart auto indenting
-set tabstop=3 "tabs = 4 spaces
+set tabstop=4 "tabs = 4 spaces
 set scrolloff=10 "keep 10 lines visible at top and bottom when scrolling
-set shiftwidth=3 "spaces for each level of autoindent
+set shiftwidth=4 "spaces for each level of autoindent
 set expandtab "use the above #spaces to insert a tab
 set ttyfast "assume terminal is fast, improves visuals
 set nocompatible "disable ancient compatibility, better overall
@@ -43,16 +43,18 @@ set smartcase "override ignore case if the search has Captials
 set showcmd "show the command in progress on last line of screen
 set hidden "keep unloaded buffers?
 set guioptions=aegimt
-set guifont=PragmataPro:h15
+set guifont=PragmataPro:h16
 set incsearch "show search results as you type
 set t_co=256
 set showmatch "when bracket inserted, briefly jump to matching one if visible
 set autochdir "auto change the folder when you change files
+set mouse=a "mouse enabled just in case
+set clipboard=unnamed "copy paste with the system clipboard
 set ruler
 autocmd FileType c,objc,cpp set commentstring=//\ %s "c comments
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let NERDTreeQuitOnOpen=1
 set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
-
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion=1
 
@@ -64,7 +66,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle' "vundle
 Plugin 'chriskempson/base16-vim' "color schemes
 Plugin 'bling/vim-airline.git' "airline
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "writing html, sick
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} "writing html, sick
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
 Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "comment stuff out
@@ -72,12 +74,21 @@ Plugin 'tpope/vim-fugitive' "Git wrapper
 Plugin 'Syntastic' "syntax checking
 Plugin 'scrooloose/nerdtree' "file browser
 Plugin 'Valloric/YouCompleteMe' "autocomplete
+Plugin 'pangloss/vim-javascript' "better js indentation/highlighting
+Plugin 'marijnh/tern_for_vim' "js autocomplete, also needs an npm install
+Plugin 'vim-ruby/vim-ruby' "better ruby support (esp autocomp)
+Plugin 'Shougo/vimproc' "support for phpcomplete
+Plugin 'Shougo/unite.vim' "support for phpcomplete
+Plugin 'm2mdas/phpcomplete-extended' "php autocompletion
 call vundle#end() 
 
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 filetype plugin indent on 
 set autoread "if file changed outside of vim, just read it again
-set guifont=PragmataPro\ for\ Powerline:h16 "Font for Macvim
-
+"set guifont=PragmataPro\ for\ Powerline:h16 "Font for Macvim
+au FileType python set softtabstop=2 | set shiftwidth=2
+au FileType ruby set tabstop=2 | set shiftwidth=2
+au FileType js set tabstop=2 | set shiftwidth=2
 
 "copy and paste
 vmap <C-c> "+yi
@@ -87,8 +98,7 @@ vmap <C-v> <C-r><C-o>+
 
 
 "Chris Theme
-"set t_co=256
-"Bundle 'chriskempson/base16-vim'
-"set background=dark
-"colorscheme base16-monokai
-"
+set t_co=256
+set background=dark
+colorscheme base16-monokai
+
