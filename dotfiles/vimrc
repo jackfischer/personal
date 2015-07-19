@@ -45,11 +45,11 @@ set showmatch "when bracket inserted, briefly jump to matching one if visible
 set autochdir "auto change the folder when you change files
 set mouse=a "mouse enabled just in case
 set clipboard=unnamed "copy paste with the system clipboard
-set ruler
-set lazyredraw
-set list
-"set listchars=tab:┊\ ,trail:·,precedes:<,extends:>,nbsp:␠ "itai ideal
-set listchars=tab:┊\ ,precedes:<,extends:>,nbsp:␠
+set ruler "line numbers etc
+set lazyredraw "buffer screen updates
+set list "display whitespace
+set listchars=tab:┊\ ,precedes:<,extends:>,nbsp:␠ "indicate tabs...
+"set listchars=tab:┊\ ,trail:·,precedes:<,extends:>,nbsp:␠ "Itai version
 set completeopt=menu,menuone,longest
 set backspace=indent,eol,start
 augroup CommentStrings
@@ -62,10 +62,13 @@ let NERDTreeQuitOnOpen=1
 set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
 "YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion=1
+"let g:ycm_path_to_python_interpreter = '/Users/jack/.pyenv/shims/python'
+let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
 set whichwrap=<,>,[,],h,l "allow h and l to wrap cursor around to prev/next line
 
 "Vundle
 set rtp+=~/.vim/bundle/vundle/
+"set rtp+=~/.vim/bundle/Vundle.vim
 "MUST CHANGE ON SOME SITUATIONS^
 
 call vundle#begin()
@@ -75,7 +78,6 @@ Plugin 'bling/vim-airline.git' "airline
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
 Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "comment stuff out
-Plugin 'tpope/vim-fugitive' "Git wrapper
 Plugin 'Syntastic' "syntax checking
 Plugin 'scrooloose/nerdtree' "file browser
 Plugin 'Valloric/YouCompleteMe' "autocomplete
@@ -88,7 +90,10 @@ Plugin 'Shougo/unite.vim' "support for phpcomplete
 "Plugin 'm2mdas/phpcomplete-extended' "php autocompletion
 "Plugin 'StanAngeloff/php.vim' " better php..
 Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'itchyny/calendar.vim'
+Plugin 'vim-scripts/applescript.vim'
 call vundle#end() 
+let g:calendar_google_calendar = 1
 
 augroup Completion
     autocmd!
@@ -101,8 +106,10 @@ filetype on
 set autoread "if file changed outside of vim, just read it again
 "set guifont=PragmataPro\ for\ Powerline:h16 "Font for Macvim
 au FileType python set softtabstop=2 | set shiftwidth=2
+"au FileType python set softtabstop=2 | colorscheme base16-ocean
 au FileType ruby set tabstop=2 | set shiftwidth=2
 au FileType javascript setl sw=2 sts=2 et
+au FileType applescript set softtabstop=2 | set shiftwidth=2
 
 "Key controls
 nmap q :q <enter> 
@@ -116,4 +123,5 @@ noremap <C-n> :NERDTreeToggle<CR>
 "emacs/osx style motion
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
+
 

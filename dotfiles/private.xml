@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+<appdef>
+    <appname>WebStorm</appname>
+    <equal>com.jetbrains.WebStorm</equal>
+</appdef>
+<replacementdef>
+<replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
+<replacementvalue>TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, SUBLIMETEXT, WebStorm</replacementvalue>
+</replacementdef>
+</root>

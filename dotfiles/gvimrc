@@ -1,0 +1,6 @@
+
+"Chris Theme
+set t_co=256
+set background=dark
+colorscheme base16-monokai
+
