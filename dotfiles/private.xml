@@ -29,9 +29,19 @@
     </item>
 
     <item>
+        <name>Fix Media Keys External Keyboard</name>
+        <identifier>private.custom_quickfire_media</identifier>
+        <device_only>DeviceVendor::CM_STORM, DeviceProduct::QUICKFIRE</device_only>
+        <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT_17, ConsumerKeyCode::MUSIC_NEXT</autogen>
+        <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV_18, ConsumerKeyCode::MUSIC_PREV</autogen>
+    </item>
+
+    <item>
         <name>Custom Mouse Buttons</name>
         <identifier>private.custom_logitech_buttons</identifier>
         <autogen>__PointingButtonToKey__ PointingButton::BUTTON6, KeyCode::MISSION_CONTROL</autogen>
+        <autogen>__KeyToKey__ PointingButton::BUTTON5, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+        <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
     </item>
 
     <replacementdef>
