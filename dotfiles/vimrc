@@ -57,14 +57,21 @@ augroup CommentStrings
     autocmd FileType c,objc,cpp set commentstring=//\ %s "c comments
 augroup END
 
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let NERDTreeQuitOnOpen=1
-set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
 "YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion=1
 "let g:ycm_path_to_python_interpreter = '/Users/jack/.pyenv/shims/python'
 let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
-set whichwrap=<,>,[,],h,l "allow h and l to wrap cursor around to prev/next line
+
+"Syntastic
+let g:syntastic_javascript_checkers = ['jshint'] " use jshint
+let g:syntastic_check_on_open = 1 " show any linting errors immediately
+
+let NERDTreeQuitOnOpen=1 "NerdTree
+set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
 
 "Vundle
 set rtp+=~/.vim/bundle/vundle/
@@ -77,21 +84,24 @@ Plugin 'chriskempson/base16-vim' "color schemes
 Plugin 'bling/vim-airline.git' "airline
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
 Plugin 'tpope/vim-surround' "pair plugin, brackets etc
-Plugin 'tpope/vim-commentary' "comment stuff out
+Plugin 'tpope/vim-commentary' "commenting
 Plugin 'Syntastic' "syntax checking
 Plugin 'scrooloose/nerdtree' "file browser
 Plugin 'Valloric/YouCompleteMe' "autocomplete
 Plugin 'pangloss/vim-javascript' "better js indentation/highlighting
-Plugin 'marijnh/tern_for_vim' "js autocomplete, also needs an npm install
+Plugin 'ternjs/tern_for_vim' "js autocomplete, also needs an npm install
 Plugin 'vim-ruby/vim-ruby' "better ruby support (esp autocomp)
 Plugin 'toyamarinyon/vim-swift' "swift highlighting
-Plugin 'Shougo/vimproc' "support for phpcomplete. requires a 'make'
+Plugin 'Shougo/vimproc' "support for phpcomplete. requires 'make'
 Plugin 'Shougo/unite.vim' "support for phpcomplete
 "Plugin 'm2mdas/phpcomplete-extended' "php autocompletion
 "Plugin 'StanAngeloff/php.vim' " better php..
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'itchyny/calendar.vim'
-Plugin 'vim-scripts/applescript.vim'
+Plugin 'shawncplus/phpcomplete.vim' "PHP
+Plugin 'vim-scripts/applescript.vim' "applescript
+Plugin 'embear/vim-localvimrc' "enable project specific .lvimrc (indeting, etc)
+Plugin 'haya14busa/incsearch.vim' "better visual searching
+Plugin 'majutsushi/tagbar' "tags for C++
+Plugin 'rhysd/clever-f.vim' "better f and t behavior
 call vundle#end() 
 let g:calendar_google_calendar = 1
 
@@ -112,6 +122,7 @@ au FileType javascript setl sw=2 sts=2 et
 au FileType applescript set softtabstop=2 | set shiftwidth=2
 
 "Key controls
+set whichwrap=<,>,[,],h,l "allow h and l to wrap cursor around to prev/next line
 nmap q :q <enter> 
 imap <Tab> <C-P>
 map j gj
@@ -124,4 +135,9 @@ noremap <C-n> :NERDTreeToggle<CR>
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
 
+"Incsearch
+map /  <Plug>(incsearch-forward)
+"map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
+nmap ? :TagbarToggle<CR>
