@@ -46,7 +46,7 @@
 
     <replacementdef>
         <replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
-        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, SUBLIMETEXT, WebStorm, PyCharm</replacementvalue>
+        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, FIREFOX, SUBLIMETEXT, WebStorm, PyCharm</replacementvalue>
     </replacementdef>
 
 </root>
