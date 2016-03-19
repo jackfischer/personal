@@ -1,5 +1,8 @@
 scriptencoding utf-8
 set encoding=utf-8
+if $SHELL =~ 'bin/fish'
+    set shell=/usr/local/bin/zsh
+endif
 
 "Basics
 set nocompatible
@@ -69,6 +72,7 @@ let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framew
 "Syntastic
 let g:syntastic_javascript_checkers = ['jshint'] " use jshint
 let g:syntastic_check_on_open = 1 " show any linting errors immediately
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 let NERDTreeQuitOnOpen=1 "NerdTree
 set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
@@ -82,7 +86,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle' "vundle
 Plugin 'chriskempson/base16-vim' "color schemes
 Plugin 'bling/vim-airline.git' "airline
-Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
+"Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
 Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "commenting
 Plugin 'Syntastic' "syntax checking
