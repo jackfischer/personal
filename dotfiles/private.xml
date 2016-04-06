@@ -13,15 +13,11 @@
         <vendorname>CM_STORM</vendorname>
         <vendorid>0x2516</vendorid>
     </devicevendordef>
-    <deviceproductdef>
-        <productname>QUICKFIRE</productname>
-        <productid>0x0011</productid>
-    </deviceproductdef>
 
     <item>
         <name>Custom Correct External Keyboard</name>
         <identifier>private.custom_quickfire_correction</identifier>
-        <device_only>DeviceVendor::CM_STORM, DeviceProduct::QUICKFIRE</device_only>
+        <device_only>DeviceVendor::CM_STORM</device_only>
         <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
         <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
         <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
@@ -31,9 +27,14 @@
     <item>
         <name>Fix Media Keys External Keyboard</name>
         <identifier>private.custom_quickfire_media</identifier>
-        <device_only>DeviceVendor::CM_STORM, DeviceProduct::QUICKFIRE</device_only>
-        <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_NEXT_17, ConsumerKeyCode::MUSIC_NEXT</autogen>
-        <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PREV_18, ConsumerKeyCode::MUSIC_PREV</autogen>
+        <device_only>DeviceVendor::CM_STORM</device_only>
+        <autogen>__KeyToKey__ KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::F10, ConsumerKeyCode::VOLUME_MUTE</autogen>
+        <autogen>__KeyToKey__ KeyCode::F8, ConsumerKeyCode::MUSIC_NEXT</autogen>
+        <autogen>__KeyToKey__ KeyCode::F7, ConsumerKeyCode::MUSIC_PREV</autogen>
+        <autogen>__KeyToKey__ KeyCode::F6, ConsumerKeyCode::MUSIC_PLAY</autogen>
+        <autogen>__KeyToKey__ KeyCode::F5, ConsumerKeyCode::MUSIC_PLAY</autogen>
     </item>
 
     <item>
@@ -46,7 +47,7 @@
 
     <replacementdef>
         <replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
-        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, FIREFOX, SUBLIMETEXT, WebStorm, PyCharm</replacementvalue>
+        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, FIREFOX, SUBLIMETEXT, ANDROID_STUDIO, WebStorm, PyCharm</replacementvalue>
     </replacementdef>
 
 </root>
