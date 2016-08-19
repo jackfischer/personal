@@ -8,6 +8,10 @@
         <appname>PyCharm</appname>
         <equal>com.jetbrains.PyCharm</equal>
     </appdef>    
+    <appdef>
+    <appname>IDEA</appname>
+        <equal>com.jetbrains.intellij.ce</equal>
+    </appdef>    
 
     <devicevendordef>
         <vendorname>CM_STORM</vendorname>
@@ -47,7 +51,7 @@
 
     <replacementdef>
         <replacementname>UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS</replacementname>
-        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, FIREFOX, SUBLIMETEXT, ANDROID_STUDIO, WebStorm, PyCharm</replacementvalue>
+        <replacementvalue>XCODE, TERMINAL, ALFRED, VI, PASSWORD, ECLIPSE, FIREFOX, SUBLIMETEXT, ANDROID_STUDIO, WebStorm, PyCharm, IDEA</replacementvalue>
     </replacementdef>
 
 </root>
