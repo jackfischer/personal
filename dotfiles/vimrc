@@ -1,7 +1,7 @@
 scriptencoding utf-8
 set encoding=utf-8
 if $SHELL =~ 'bin/fish'
-    set shell=/bin/bash
+    set shell=/usr/local/bin/zsh
 endif
 
 "Basics
@@ -41,8 +41,7 @@ set smartcase "override ignore case if the search has Captials
 set showcmd "show the command in progress on last line of screen
 set hidden "keep unloaded buffers?
 set guioptions=aegimt
-"set guifont=Bitstream\ Vera\ Sans\ Mono:h16
-set guifont=Monaco:h11
+set guifont=PragmataPro:h16
 set incsearch "show search results as you type
 set t_co=256
 set showmatch "when bracket inserted, briefly jump to matching one if visible
@@ -68,14 +67,19 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion=1
 "let g:ycm_path_to_python_interpreter = '/Users/jack/.pyenv/shims/python'
-let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
-let g:ycm_python_binary_path = '/usr/local/bin/python' "provide autocomplete specifically for python 3
+"let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python' "ran install.py with homebrew python (pyenv system)
+"let g:ycm_python_binary_path = '/usr/local/bin/python' "provide autocomplete specifically for python 3
+"let g:ycm_python_binary_path = '/Users/jack/.pyenv/shims/python'
+let g:ycm_python_binary_path = 'python' "resolves to pyenv
+let g:EclimCompletionMethod = 'omnifunc' "java
 
 "Syntastic
 let g:syntastic_javascript_checkers = ['jshint'] " use jshint
 let g:syntastic_check_on_open = 1 " show any linting errors immediately
 let g:syntastic_cpp_compiler_options = '-std=c++14'
-let g:syntastic_python_python_exec = '/usr/local/bin/python'
+"let g:syntastic_python_python_exec = '/usr/local/bin/python'
+let g:syntastic_python_python_exec = '/Users/jack/.pyenv/shims/python'
 let g:syntastic_python_checkers = ['python']
 
 let NERDTreeQuitOnOpen=1 "NerdTree
@@ -83,15 +87,14 @@ let NERDTreeIgnore = ['\.pyc$']
 set rtp+=~/.vim/bundle/vim-airline/vim-airline/bindings/vim "airline
 
 "Vundle
-"set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle/
+"set rtp+=~/.vim/bundle/Vundle.vim
 "MUST CHANGE ON SOME SITUATIONS^
 
 call vundle#begin()
 Plugin 'gmarik/vundle' "vundle
 Plugin 'chriskempson/base16-vim' "color schemes
 Plugin 'bling/vim-airline.git' "airline
-Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' "latex
 Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "commenting
@@ -126,7 +129,7 @@ filetype plugin indent on
 filetype on
 set autoread "if file changed outside of vim, just read it again
 "set guifont=PragmataPro\ for\ Powerline:h16 "Font for Macvim
-"au FileType python set softtabstop=2 | set shiftwidth=2
+au FileType python set softtabstop=2 | set shiftwidth=2
 "au FileType python set softtabstop=2 | colorscheme base16-ocean
 au FileType ruby set tabstop=2 | set shiftwidth=2
 au FileType javascript setl sw=2 sts=2 et
