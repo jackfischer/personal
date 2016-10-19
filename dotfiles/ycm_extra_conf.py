@@ -1,6 +1,7 @@
 import os
 import ycm_core
 
+""" Cpp """
 flags = [
     '-x',
     'c++',
@@ -22,6 +23,16 @@ flags = [
     "-isystem",
     "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
     ]
+
+
+""" C """
+#flags = [
+#        '-Wall', '-Wextra', '-Werror',
+#        '-std=c99',
+#        '-x', 'c',
+#        '-I/usr/local/opt/openssl/include'
+#        ]
+
 
 
 def FlagsForFile(filename, **kwargs):
