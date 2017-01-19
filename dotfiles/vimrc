@@ -81,6 +81,8 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 "let g:syntastic_python_python_exec = '/usr/local/bin/python'
 let g:syntastic_python_python_exec = '/Users/jack/.pyenv/shims/python'
 let g:syntastic_python_checkers = ['python']
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker
 
 let NERDTreeQuitOnOpen=1 "NerdTree
 let NERDTreeIgnore = ['\.pyc$']
@@ -105,7 +107,7 @@ Plugin 'pangloss/vim-javascript' "better js indentation/highlighting
 Plugin 'ternjs/tern_for_vim' "js autocomplete, also needs an npm install
 Plugin 'vim-ruby/vim-ruby' "better ruby support (esp autocomp)
 Plugin 'toyamarinyon/vim-swift' "swift highlighting
-Plugin 'Shougo/vimproc' "support for phpcomplete. requires 'make'
+Plugin 'Shougo/vimproc' "support for some autocomplete; requires 'make'
 Plugin 'Shougo/unite.vim' "support for phpcomplete
 "Plugin 'm2mdas/phpcomplete-extended' "php autocompletion
 "Plugin 'StanAngeloff/php.vim' " better php..
@@ -117,6 +119,8 @@ Plugin 'majutsushi/tagbar' "tags for C++
 Plugin 'rhysd/clever-f.vim' "better f and t behavior
 Plugin 'tpope/vim-fugitive'
 Plugin 'brgmnn/vim-opencl' "opencl syntax (.cl)
+Plugin 'leafgarland/typescript-vim' "typescript highlighting & indentation
+Plugin 'Quramy/tsuquyomi' "typescript semantic autocomplete w/ vimproc
 call vundle#end() 
 let g:calendar_google_calendar = 1
 
@@ -135,6 +139,7 @@ au FileType python set softtabstop=2 | set shiftwidth=2
 au FileType ruby set tabstop=2 | set shiftwidth=2
 au FileType javascript setl sw=2 sts=2 et
 au FileType applescript set softtabstop=2 | set shiftwidth=2
+au FileType html set softtabstop=2 | set shiftwidth=2
 
 "Key controls
 set whichwrap=<,>,[,],h,l "allow h and l to wrap cursor around to prev/next line
