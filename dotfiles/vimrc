@@ -72,17 +72,24 @@ let g:ycm_path_to_python_interpreter = '/usr/local/bin/python' "ran install.py w
 "let g:ycm_python_binary_path = '/usr/local/bin/python' "provide autocomplete specifically for python 3
 "let g:ycm_python_binary_path = '/Users/jack/.pyenv/shims/python'
 let g:ycm_python_binary_path = 'python' "resolves to pyenv
-let g:EclimCompletionMethod = 'omnifunc' "java, feed eclim to YCM omnifunc
+"let g:EclimCompletionMethod = 'omnifunc' "java, feed eclim to YCM omnifunc
 
 "Syntastic
 let g:syntastic_javascript_checkers = ['jshint'] " use jshint
 let g:syntastic_check_on_open = 1 " show any linting errors immediately
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+"let g:syntastic_cpp_compiler_options = '-std=c++14'
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
+let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_checkers = ['gcc']
 "let g:syntastic_python_python_exec = '/usr/local/bin/python'
 let g:syntastic_python_python_exec = '/Users/jack/.pyenv/shims/python'
 let g:syntastic_python_checkers = ['python']
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker
+
+"clang_complete
+let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 
 let NERDTreeQuitOnOpen=1 "NerdTree
 let NERDTreeIgnore = ['\.pyc$']
@@ -102,7 +109,8 @@ Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "commenting
 Plugin 'Syntastic' "syntax checking
 Plugin 'scrooloose/nerdtree' "file browser
-Plugin 'Valloric/YouCompleteMe' "autocomplete
+"Plugin 'Valloric/YouCompleteMe' "autocomplete
+Plugin 'Rip-Rip/clang_complete'
 Plugin 'pangloss/vim-javascript' "better js indentation/highlighting
 Plugin 'ternjs/tern_for_vim' "js autocomplete, also needs an npm install
 Plugin 'vim-ruby/vim-ruby' "better ruby support (esp autocomp)
