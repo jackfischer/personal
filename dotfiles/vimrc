@@ -61,18 +61,22 @@ augroup CommentStrings
 augroup END
 
 "YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion=1
-"let g:ycm_path_to_python_interpreter = '/Users/jack/.pyenv/shims/python'
-"let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python' "ran install.py with homebrew python (pyenv system)
-"let g:ycm_python_binary_path = '/usr/local/bin/python' "provide autocomplete specifically for python 3
-"let g:ycm_python_binary_path = '/Users/jack/.pyenv/shims/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+"
+"
+"let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_autoclose_preview_window_after_insertion=1
+""let g:ycm_path_to_python_interpreter = '/Users/jack/.pyenv/shims/python'
+""let g:ycm_path_to_python_interpreter = '/System/Library/Frameworks/Python.framework/Versions/Current/bin/python'
+"let g:ycm_path_to_python_interpreter = '/usr/local/bin/python' "ran install.py with homebrew python (pyenv system)
+let g:ycm_path_to_python_interpreter = '/usr/bin/python' "ran install.py with homebrew python (pyenv system) NUH UH
+""let g:ycm_python_binary_path = '/usr/local/bin/python' "provide autocomplete specifically for python 3
+""let g:ycm_python_binary_path = '/Users/jack/.pyenv/shims/python'
 let g:ycm_python_binary_path = 'python' "resolves to pyenv
-"let g:EclimCompletionMethod = 'omnifunc' "java, feed eclim to YCM omnifunc
+""let g:EclimCompletionMethod = 'omnifunc' "java, feed eclim to YCM omnifunc
 
 "Syntastic
 let g:syntastic_javascript_checkers = ['jshint'] " use jshint
@@ -109,8 +113,8 @@ Plugin 'tpope/vim-surround' "pair plugin, brackets etc
 Plugin 'tpope/vim-commentary' "commenting
 Plugin 'Syntastic' "syntax checking
 Plugin 'scrooloose/nerdtree' "file browser
-"Plugin 'Valloric/YouCompleteMe' "autocomplete
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'Valloric/YouCompleteMe' "autocomplete
+"Plugin 'Rip-Rip/clang_complete'
 Plugin 'pangloss/vim-javascript' "better js indentation/highlighting
 Plugin 'ternjs/tern_for_vim' "js autocomplete, also needs an npm install
 Plugin 'vim-ruby/vim-ruby' "better ruby support (esp autocomp)
