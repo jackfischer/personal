@@ -1,7 +1,7 @@
 import os
 import ycm_core
 
-""" Cpp """
+"""itai"""
 flags = [
     '-x',
     'c++',
@@ -25,16 +25,8 @@ flags = [
     ]
 
 
-""" C """
-#flags = [
-#        '-Wall', '-Wextra', '-Werror',
-#        '-std=c99',
-#        '-x', 'c',
-#        '-I/usr/local/opt/openssl/include'
-#        ]
-
-
-
 def FlagsForFile(filename, **kwargs):
-  return { "flags": flags, "do_cache": False }
+  return { "flags": flags, "do_cache": False } #TODO change for C/C++
+"""end itai"""
+
 

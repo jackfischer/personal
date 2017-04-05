@@ -1,0 +1,14 @@
+unmapAll
+map j scrollDown
+map k scrollUp
+map H scrollPageUp
+map L scrollPageDown
+map u restoreTab
+map gg scrollToTop
+map G scrollToBottom
+map h scrollLeft
+map l scrollRight
+map b goBack
+map w goForward
+map <c-e> scrollDown
+map <c-y> scrollUp

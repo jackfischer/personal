@@ -1,7 +1,3 @@
-alias rome "ssh root@jackfischer.me"
-alias wgetmirror "wget -E -H -k -K -p "
-alias wgetreq "wget -p -k"
-alias nmap "nmap -T4 -A -v"
 alias l "ls -al"
 
 alias g "git"
@@ -17,6 +13,7 @@ alias gd "git diff"
 alias gdc "git diff --cached"
 alias gb "git branch"
 alias gr "git remote -v"
+alias gx "gx"
 alias py "pyenv versions"
 alias sub "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
 
