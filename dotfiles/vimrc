@@ -76,11 +76,11 @@ let g:ycm_python_binary_path = 'python' "resolves to pyenv
 ""let g:EclimCompletionMethod = 'omnifunc' "java, feed eclim to YCM omnifunc
 
 "Syntastic
-let g:syntastic_javascript_checkers = ['jshint'] " use jshint
+let g:syntastic_javascript_checkers = ['eslint'] " use jshint
 let g:syntastic_check_on_open = 1 " show any linting errors immediately
 "let g:syntastic_cpp_compiler_options = '-std=c++14'
 let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra -pedantic'
+let g:syntastic_cpp_compiler_options = '-std=c++14 -Wall -Wextra -pedantic'
 let g:syntastic_cpp_check_header = 1
 "let g:syntastic_cpp_checkers = ['gcc']
 "let g:syntastic_python_python_exec = '/usr/local/bin/python'
@@ -130,6 +130,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'brgmnn/vim-opencl' "opencl syntax (.cl)
 Plugin 'leafgarland/typescript-vim' "typescript highlighting & indentation
 Plugin 'Quramy/tsuquyomi' "typescript semantic autocomplete w/ vimproc
+
+Plugin 'Superbil/llvm.vim'
 call vundle#end() 
 let g:calendar_google_calendar = 1
 
