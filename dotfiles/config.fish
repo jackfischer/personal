@@ -15,15 +15,15 @@ alias gb "git branch"
 alias gr "git remote -v"
 alias gx "gx"
 alias py "pyenv versions"
-alias sub "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
-
-set -U EDITOR /usr/bin/mvim
 
 status --is-interactive; and . (pyenv init -|psub)
+status --is-interactive; and . (pyenv virtualenv-init -|psub)
+
+set -gx PATH $PATH /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/
+set -gx PATH $PATH /Applications/MacVim.app/Contents/bin/
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-set -gx MANPATH "$MANPATH:/usr/local/opt/erlang/lib/erlang/man"
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish
 
-## OPAM configuration
-#. /Users/jack/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
+status --is-interactive; and source (nodenv init -|psub)

@@ -1,1 +1,7 @@
 set clipboard=unnamedplus
+set ignorecase
+set smartcase
+set hlsearch
+set notimeout 
+set ttimeout 
+set startnormalmode

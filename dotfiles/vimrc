@@ -140,12 +140,15 @@ augroup Completion
     autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 augroup END
 
+" whitelist all local vimrc files 
+let g:localvimrc_whitelist='/Users/jack/.*'
+let g:localvimrc_sandbox = 0
 
 filetype plugin indent on 
 filetype on
 set autoread "if file changed outside of vim, just read it again
 "set guifont=PragmataPro\ for\ Powerline:h16 "Font for Macvim
-au FileType python set softtabstop=2 | set shiftwidth=2
+"au FileType python set softtabstop=2 | set shiftwidth=2
 "au FileType python set softtabstop=2 | colorscheme base16-ocean
 au FileType ruby set tabstop=2 | set shiftwidth=2
 au FileType javascript setl sw=2 sts=2 et
